@@ -948,7 +948,7 @@ void DistanceCalculator::getBitsDNA(char* seq, int* size, unsigned int *seqOut, 
 	*seqOut = 0x0;
 	*gapOut = 0xF0F0F0F; // initialize higher 4 bits as 0, and lower 4 bits as one
 
-	if(size<=0){
+	if(*size<=0){
 		return;
 	}
 
@@ -1039,7 +1039,7 @@ void DistanceCalculator::getBitsProteinClustered(char* seq, int* size, unsigned 
 	*seqOut = 0x0;
 	*gapOut = 0x0;
 
-	if(size<=0){
+	if(*size<=0){
 		return;
 	}
 
