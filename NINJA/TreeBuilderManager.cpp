@@ -67,8 +67,8 @@ std::string TreeBuilderManager::doJob(){
 
 	int* equalCluster;
 
-    struct timespec start, afterRead, end;
-    clock_gettime(CLOCK_MONOTONIC, &start);
+    // struct timespec start, afterRead, end;
+    // clock_gettime(CLOCK_MONOTONIC, &start);
 
 	/*
 	#ifdef LINUX
@@ -156,7 +156,7 @@ std::string TreeBuilderManager::doJob(){
 			std::string** seqs = seqReader->getSeqs();
 			this->names = seqReader->getNames();
 
-            clock_gettime(CLOCK_MONOTONIC, &afterRead); 
+            // clock_gettime(CLOCK_MONOTONIC, &afterRead); 
 
 			this->alphType = (TreeBuilderManager::AlphabetType) seqReader->getAlphType();
 			fprintf(stderr,"Calculating distances....\n");
@@ -179,10 +179,10 @@ std::string TreeBuilderManager::doJob(){
 
 		if(this->outType == dist){
             if (this->printTime){
-                clock_gettime(CLOCK_MONOTONIC, &end);
-                fprintf(stderr,"Read Time: %lu ns\n",timespecDiff(&afterRead, &start));
-                fprintf(stderr,"Distance Time: %lu ns\n",timespecDiff(&end, &afterRead));
-                fprintf(stderr,"Total Time: %lu ns\n",timespecDiff(&end, &start));
+                // clock_gettime(CLOCK_MONOTONIC, &end);
+                // fprintf(stderr,"Read Time: %lu ns\n",timespecDiff(&afterRead, &start));
+                // fprintf(stderr,"Distance Time: %lu ns\n",timespecDiff(&end, &afterRead));
+                // fprintf(stderr,"Total Time: %lu ns\n",timespecDiff(&end, &start));
             }
 			if(this->inType != alignment){
 				fprintf(stderr,"Input and output distances not allowed. What are you trying to do?\n");

@@ -73,8 +73,8 @@ std::string ClusterManager::doJob(){
 
 	int* equalCluster;
 
-        struct timespec start, afterRead, end;
-        clock_gettime(CLOCK_MONOTONIC, &start);
+        // struct timespec start, afterRead, end;
+        // clock_gettime(CLOCK_MONOTONIC, &start);
 
 	SequenceFileReader* seqReader = NULL;
 	if (!this->method.compare("extmem")){
@@ -88,7 +88,7 @@ std::string ClusterManager::doJob(){
 			std::string** seqs = seqReader->getSeqs();
 			this->names = seqReader->getNames();
 
-            clock_gettime(CLOCK_MONOTONIC, &afterRead); 
+            // clock_gettime(CLOCK_MONOTONIC, &afterRead); 
 
 			this->alphType = (ClusterManager::AlphabetType) seqReader->getAlphType();
 			fprintf(stderr,"Calculating distances....\n");
